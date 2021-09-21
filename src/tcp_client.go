@@ -17,6 +17,7 @@ func main() {
 	defer conn.Close() // 关闭连接
 	inputReader := bufio.NewReader(os.Stdin)
 	for {
+		//用户键盘输入
 		input, err := inputReader.ReadString('\n') // 读取用户输入
 		inputInfo := strings.Trim(input, "\r\n")
 		if strings.ToUpper(inputInfo) == "Q" { // 如果输入q就退出
