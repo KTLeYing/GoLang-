@@ -8,7 +8,7 @@ import (
 )
 
 //处理过程
-func process(conn net.Conn) {
+func process2(conn net.Conn) {
 	//关闭连接
 	defer conn.Close()
 	readre := bufio.NewReader(conn)
@@ -48,6 +48,6 @@ func main() {
 			continue
 		}
 		//开启一个线程来处理消息数据
-		go process(conn)
+		go process2(conn)
 	}
 }

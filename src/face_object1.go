@@ -2,21 +2,21 @@ package main
 
 import "fmt"
 
-type Person struct {
+type Person2 struct {
 	name string
 	sex  string
 	age  int
 }
 
-type Student struct {
-	person Person
+type Student2 struct {
+	person Person2
 	id     int
 	addr   string
 	name   string
 }
 
 func main() {
-	var s Student
+	var s Student2
 	s.name = "mzl"
 	fmt.Println(s)
 	s.person.name = "jhd"

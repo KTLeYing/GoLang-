@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-func hello() {
+func hello1() {
 	fmt.Println("第 1 步...")
 }
 
 func main() {
 	//启动一个go线程去执行hello()函数
-	go hello()
+	go hello1()
 	fmt.Println("第 2 步...")
 }
 

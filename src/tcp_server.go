@@ -7,7 +7,7 @@ import (
 )
 
 // 处理函数
-func process(conn net.Conn) {
+func process1(conn net.Conn) {
 	defer conn.Close()
 	for {
 		reader := bufio.NewReader(conn)
@@ -39,6 +39,6 @@ func main() {
 			continue
 		}
 		//启动一个goroutine来启动线程
-		go process(conn)
+		go process1(conn)
 	}
 }

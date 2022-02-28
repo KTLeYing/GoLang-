@@ -1,23 +1,20 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"github.com/xuri/excelize/v2"
-	"os"
 	"strconv"
 )
 
+/**
+在匹配度帅选结果上来根据匹配度来统计matchDegree各范围的数量
+*/
 func main() {
 	f, _ := excelize.OpenFile("D:\\MyInstall\\Python\\files\\十万热歌结果(音频指纹两两匹配).xlsx")
 	//获取sheet上的所有单元格
 	rows, _ := f.GetRows("十万热歌结果(音频指纹两两匹配)")
 	var arr [11]int
-	fileName := "D:\\MyInstall\\Python\\files\\degree0.txt"
-	//创建文件
-	f1, _ := os.Create(fileName)
-	//创建写文件流
-	w := bufio.NewWriter(f1)
+
 	for _, row := range rows {
 		//fmt.Println(row)
 		//fmt.Println(row[2])
@@ -33,14 +30,9 @@ func main() {
 				arr[10]++
 			}
 		}
-		if matchingDegree1 == 0 {
-			w.WriteString(row[0] + "\t" + row[1] + "\n")
-		}
+
 		fmt.Println()
 	}
-	//关闭写流和文件流
-	w.Flush()
-	f1.Close()
 
 	for _, res := range arr {
 		fmt.Println(res)

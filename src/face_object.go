@@ -10,13 +10,13 @@ type Person struct {
 
 type mystr string
 
-type Student struct {
+type Student3 struct {
 	Person
 	int
 	mystr
 }
 
 func main() {
-	s1 := Student{Person{"MZL", "man", 18}, 1, "kk"}
+	s1 := Student3{Person{"MZL", "man", 18}, 1, "kk"}
 	fmt.Print(s1)
 }
